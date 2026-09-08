@@ -1,18 +1,7 @@
 import random
 import csv
-import os
 import time
 import tkinter as tk
-from datetime import datetime
-
-# -----------------------------------
-# Experiment settings
-# -----------------------------------
-CONDITION = "2C"
-TASK = "free_recall"
-PRESENTATION_MS = 1500
-TRIALS = 10
-DATA_DIR = "Result"
 
 # -----------------------------------
 # Load sentences (chunking condition)
@@ -28,7 +17,7 @@ def sentence_to_words(sentence):
 # -----------------------------------
 # Show one word at a time with timer
 # -----------------------------------
-def show_words_timed(words, duration_ms=PRESENTATION_MS):
+def show_words_timed(words, duration_ms=1500):
     index = 0
 
     def show_next_word():
@@ -54,16 +43,15 @@ def show_words_timed(words, duration_ms=PRESENTATION_MS):
 
 # -----------------------------------
 # Serial-position scoring
-# Order-independent: each recalled word is consumed once, so a word that
-# appears several times in the sentence must be recalled just as often.
 # -----------------------------------
 def serial_position_score(presented, recalled):
-    remaining = [w.strip().lower() for w in recalled]
+    # A sentence can contain the same word several times, so each recalled
+    # word is used up once instead of always matching the first occurrence.
+    remaining = [w.lower() for w in recalled]
     score = []
     for word in presented:
-        key = word.strip().lower()
-        if key in remaining:
-            remaining.remove(key)
+        if word.lower() in remaining:
+            remaining.remove(word.lower())
             score.append(1)
         else:
             score.append(0)
@@ -78,7 +66,7 @@ def run_single_trial(all_sentences):
 
     # Timestamp: presentation start
     presentation_start = time.time()
-    show_words_timed(presented, duration_ms=PRESENTATION_MS)
+    show_words_timed(presented, duration_ms=1500)
     # Timestamp: presentation end
     presentation_end = time.time()
 
@@ -93,58 +81,47 @@ def run_single_trial(all_sentences):
     return sentence, presented, recalled, sp_score, presentation_start, presentation_end, recall_start
 
 # -----------------------------------
-# Full experiment: one participant × 10 trials
+# Full experiment: 4 participants × 10 trials
 # -----------------------------------
 def run_experiment():
     all_sentences = load_sentences("clean_sentences.txt")
 
-    name = input("Enter participant name: ")
-
-    # Prepare CSV file
-    os.makedirs(DATA_DIR, exist_ok=True)
-    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    filename = os.path.join(DATA_DIR, f"{CONDITION}_{name}_{timestamp}.csv")
-
-    with open(filename, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow([
-            "condition",
-            "task",
-            "participant",
-            "trial",
-            "sentence",
-            "list_length",
-            "presentation_ms",
-            "presented_words",
-            "recalled_words",
-            "serial_position_score",
-            "presentation_start_time",
-            "presentation_end_time",
-            "recall_start_time"
-        ])
-
-        for trial in range(1, TRIALS + 1):
-            print(f"\nTrial {trial} for {name}")
-            (sentence, presented, recalled, sp_score,
-             t_start, t_end, t_recall) = run_single_trial(all_sentences)
-
+    for p in range(1):
+        print(f"\n--- Participant {p} ---")
+        name = input("Enter participant name: ")
+        
+        with open(f"Result/2C_{name}.csv", "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
             writer.writerow([
-                CONDITION,
-                TASK,
-                name,
-                trial,
-                sentence,
-                len(presented),
-                PRESENTATION_MS,
-                " ".join(presented),
-                " ".join(recalled),
-                " ".join(map(str, sp_score)),
-                t_start,
-                t_end,
-                t_recall
+                "participant",
+                "trial",
+                "sentence",
+                "presented_words",
+                "recalled_words",
+                "serial_recall_score",
+                "presentation_start_time",
+                "presentation_end_time",
+                "recall_start_time"
             ])
 
-    print(f"\nChunking experiment complete. Data saved to {filename}")
+            for trial in range(1, 11):
+                print(f"\nTrial {trial} for {name}")
+                (sentence, presented, recalled, sp_score,
+                t_start, t_end, t_recall) = run_single_trial(all_sentences)
+
+                writer.writerow([
+                    name,
+                    trial,
+                    sentence,
+                    " ".join(presented),
+                    " ".join(recalled),
+                    " ".join(map(str, sp_score)),
+                    t_start,
+                    t_end,
+                    t_recall
+                ])
+
+    print(f"\nChunking experiment complete. Data saved to Result/2C_{name}.csv")
 
 # Run experiment
 if __name__ == "__main__":

@@ -49,7 +49,7 @@ def serial_position_score(presented, recalled):
 # Run one trial
 # -----------------------------------
 def run_single_trial(all_words):
-    presented = random.sample(all_words, 7)
+    presented = random.sample(all_words, 15)
     show_words_timed(presented, duration_ms=1500)
 
     recalled_raw = input("Write all the words you remember: ")

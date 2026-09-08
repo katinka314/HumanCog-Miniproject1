@@ -58,7 +58,7 @@ def pause_30_seconds():
 # Run one trial
 # -----------------------------------
 def run_single_trial(all_words):
-    presented = random.sample(all_words, 7)
+    presented = random.sample(all_words, 15)
 
     # Timestamp: presentation start
     presentation_start = time.time()
@@ -84,7 +84,7 @@ def run_single_trial(all_words):
 # Full experiment: 4 participants × 10 trials
 # -----------------------------------
 def run_experiment():
-    all_words = load_four_letter_words("words1.txt")
+    all_words = load_four_letter_words("words_3_4.txt")
 
     for p in range(1):
         print(f"\n--- Participant {p} ---")

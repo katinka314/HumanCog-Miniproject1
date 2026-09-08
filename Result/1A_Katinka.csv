@@ -1,11 +1,11 @@
-condition,task,participant,trial,list_length,presentation_ms,presented_words,recalled_words,score,presentation_start_time,presentation_end_time,recall_start_time
-1A,free_recall,Katinka,1,15,750,June|lake|oval|claw|mine|beat|week|bale|wool|July|free|stem|meal|both|knot,both|knot|July|June|oval|lake|mine|week|wool|bale,1|1|1|0|1|0|1|1|1|1|0|0|0|1|1,1788876779.2303154,1788876791.377863,1788876791.3778636
-1A,free_recall,Katinka,2,15,750,spit|knot|soft|rust|unit|lame|lime|home|boot|crop|cord|beer|rent|gold|post,rent|gold|post|boot|lame|lime|home,0|0|0|0|0|1|1|1|1|0|0|0|1|1|1,1788876833.2165382,1788876845.2520082,1788876845.2520096
-1A,free_recall,Katinka,3,15,750,salt|face|ever|bark|mark|easy|time|wave|late|next|home|gram|fowl|male|mean,mean|gram|male|salt|face|bark,1|1|0|1|0|0|0|0|0|0|0|1|0|1|1,1788876920.724825,1788876932.7493567,1788876932.7493572
-1A,free_recall,Katinka,4,15,750,flow|stop|east|army|dear|take|wood|cork|ship|tent|only|onto|hoof|lens|past,lens|onto|past|ship,0|0|0|0|0|0|0|0|1|0|0|1|0|1|1,1788876954.6559663,1788876966.655591,1788876966.655592
-1A,free_recall,Katinka,5,15,750,keep|plug|rich|yawn|mood|bent|from|clay|bell|visa|wood|need|line|tray|girl,tray|line|girl|bend|bent|need|clay|from|rich|yawn,0|0|1|1|0|1|1|1|0|0|0|1|1|1|1,1788877052.1410298,1788877064.177957,1788877064.1779583
-1A,free_recall,Katinka,6,15,750,hill|busy|next|cast|debt|life|hiss|hole|road|bath|pain|keep|good|sill|body,body|sill|keep|hill,1|0|0|0|0|0|0|0|0|0|0|1|0|1|1,1788877173.5749993,1788877185.52462,1788877185.5246208
-1A,free_recall,Katinka,7,15,750,meal|tame|real|news|card|book|fowl|cook|some|high|debt|male|time|dive|bank,dive|bank|fowl|cook|meal,1|0|0|0|0|0|1|1|0|0|0|0|0|1|1,1788877214.6592696,1788877226.6559436,1788877226.6559443
-1A,free_recall,Katinka,8,15,750,bang|dull|yawn|moon|fire|hoof|bark|wide|gate|grip|pain|rice|than|head|call,than|head|call|bark|howl|moon|rice|slip|spit,0|0|0|1|0|0|1|0|0|0|0|1|1|1|1,1788877287.8794186,1788877299.8414748,1788877299.8414757
-1A,free_recall,Katinka,9,15,750,cord|mind|cork|slip|soil|lung|hour|club|tail|jury|cell|kiss|beef|book|acid,beef|book|acid|call|coil,0|0|0|0|0|0|0|0|0|0|0|0|1|1|1,1788877327.5180073,1788877339.5072758,1788877339.5072768
-1A,free_recall,Katinka,10,15,750,park|rich|soap|will|fact|plan|head|next|trap|near|cusp|skin|tail|star|soft,tail|star|soft|skin|coil|tube|head,0|0|0|0|0|0|1|0|0|0|0|1|1|1|1,1788877366.767089,1788877378.7725286,1788877378.7725296
+condition,task,participant,trial,list_length,presentation_ms,presented_words,recalled_words,serial_position_score
+1A,free_recall,Katinka,1,15,750,June lake oval claw mine beat week bale wool July free stem meal both knot,both knot July June oval lake mine week wool bale,1 1 1 0 1 0 1 1 1 1 0 0 0 1 1
+1A,free_recall,Katinka,2,15,750,spit knot soft rust unit lame lime home boot crop cord beer rent gold post,rent gold post boot lame lime home,0 0 0 0 0 1 1 1 1 0 0 0 1 1 1
+1A,free_recall,Katinka,3,15,750,salt face ever bark mark easy time wave late next home gram fowl male mean,mean gram male salt face bark,1 1 0 1 0 0 0 0 0 0 0 1 0 1 1
+1A,free_recall,Katinka,4,15,750,flow stop east army dear take wood cork ship tent only onto hoof lens past,lens onto past ship,0 0 0 0 0 0 0 0 1 0 0 1 0 1 1
+1A,free_recall,Katinka,5,15,750,keep plug rich yawn mood bent from clay bell visa wood need line tray girl,tray line girl bend bent need clay from rich yawn,0 0 1 1 0 1 1 1 0 0 0 1 1 1 1
+1A,free_recall,Katinka,6,15,750,hill busy next cast debt life hiss hole road bath pain keep good sill body,body sill keep hill,1 0 0 0 0 0 0 0 0 0 0 1 0 1 1
+1A,free_recall,Katinka,7,15,750,meal tame real news card book fowl cook some high debt male time dive bank,dive bank fowl cook meal,1 0 0 0 0 0 1 1 0 0 0 0 0 1 1
+1A,free_recall,Katinka,8,15,750,bang dull yawn moon fire hoof bark wide gate grip pain rice than head call,than head call bark howl moon rice slip spit,0 0 0 1 0 0 1 0 0 0 0 1 1 1 1
+1A,free_recall,Katinka,9,15,750,cord mind cork slip soil lung hour club tail jury cell kiss beef book acid,beef book acid call coil,0 0 0 0 0 0 0 0 0 0 0 0 1 1 1
+1A,free_recall,Katinka,10,15,750,park rich soap will fact plan head next trap near cusp skin tail star soft,tail star soft skin coil tube head,0 0 0 0 0 0 1 0 0 0 0 1 1 1 1

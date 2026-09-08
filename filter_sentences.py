@@ -57,9 +57,8 @@ with open(input_file, "r", encoding="utf-8") as infile, \
 
         if len(parts) < 3:
             continue
-        
-        sentence = parts[2].strip()
 
+        sentence = parts[2].strip()
 
         # Remove sentences containing numbers
         if contains_number(sentence):
@@ -69,7 +68,7 @@ with open(input_file, "r", encoding="utf-8") as infile, \
         if contains_all_caps_word(sentence):
             continue
 
-        # Remove sentences containing words longer than 8 characters
+        # Remove sentences containing words longer than 6 characters
         if contains_long_word(sentence):
             continue
 
@@ -89,9 +88,9 @@ with open(input_file, "r", encoding="utf-8") as infile, \
 
         if len(words) != 15:
             continue
-        print("here")
+
         # Remove sentences containing words not in dictionary
         if contains_unknown_word(cleaned):
             continue
-        print("also here")
+
         outfile.write(cleaned + "\n")

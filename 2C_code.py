@@ -42,15 +42,14 @@ def show_words_timed(words, duration_ms=PRESENTATION_MS):
 
     window = tk.Tk()
     window.title("Chunking Recall – Word Presentation")
-    window.geometry("800x400")
     window.configure(bg="white")
     window.lift()
-    window.attributes("-topmost", True)
+    window.focus_force()
 
     label = tk.Label(window, text="", font=("Arial", 40), fg="black", bg="white")
-    label.pack(expand=True, padx=40, pady=40)
+    label.pack(padx=40, pady=40)
 
-    window.after(300, show_next_word)
+    show_next_word()
     window.mainloop()
 
 # -----------------------------------

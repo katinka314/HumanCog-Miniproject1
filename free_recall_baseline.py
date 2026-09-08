@@ -71,7 +71,7 @@ def run_experiment():
         name = input("Enter participant name: ")
 
         # Prepare CSV file
-        with open(f"Result/free_recall_baseline{name}.csv", "w", newline="", encoding="utf-8") as f:
+        with open(f"Result/free_recall_baseline_{name}.csv", "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow([
                 "participant",
@@ -79,7 +79,7 @@ def run_experiment():
                 "presented_words",
                 "recalled_words",
                 "serial_position_score"
-                ])
+            ])
             
             # 10 trials per participant
             for trial in range(1, 11):

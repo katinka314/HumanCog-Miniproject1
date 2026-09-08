@@ -112,7 +112,7 @@ def run_experiment():
             "presentation_ms",
             "presented_words",
             "recalled_words",
-            "score",
+            "serial_recall_score",
             "presentation_start_time",
             "presentation_end_time",
             "recall_start_time"

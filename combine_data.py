@@ -106,6 +106,9 @@ def load(path):
     if "condition" in header:
         df = pd.DataFrame([r for r in data if len(r) == len(header)], columns=header)
         df["format"] = "current"
+        # Free recall and serial recall name their score column differently
+        df = df.rename(columns={"serial_position_score": "score",
+                                "serial_recall_score": "score"})
     else:
         df = read_legacy(path, data, condition_from_filename(path))
         if df is None:

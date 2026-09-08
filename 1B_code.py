@@ -139,7 +139,7 @@ def run_experiment():
             "presentation_ms",
             "presented_words",
             "recalled_words",
-            "score",
+            "serial_position_score",
             "presentation_start_time",
             "presentation_end_time",
             "recall_start_time"
@@ -157,9 +157,9 @@ def run_experiment():
                 trial,
                 LIST_LENGTH,
                 PRESENTATION_MS,
-                "|".join(presented),
-                "|".join(recalled),
-                "|".join(map(str, sp_score)),
+                " ".join(presented),
+                " ".join(recalled),
+                " ".join(map(str, sp_score)),
                 t_start,
                 t_end,
                 t_recall

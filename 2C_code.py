@@ -3,6 +3,7 @@ import csv
 import time
 import tkinter as tk
 
+SENTENCES = "clean_sentences10.txt"
 # -----------------------------------
 # Load sentences (chunking condition)
 # -----------------------------------
@@ -84,7 +85,7 @@ def run_single_trial(all_sentences):
 # Full experiment: 4 participants × 10 trials
 # -----------------------------------
 def run_experiment():
-    all_sentences = load_sentences("clean_sentences.txt")
+    all_sentences = load_sentences(SENTENCES)
 
     for p in range(1):
         print(f"\n--- Participant {p} ---")

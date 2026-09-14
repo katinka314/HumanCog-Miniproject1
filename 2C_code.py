@@ -1,6 +1,9 @@
 import random
 import csv
+import os
+import sys
 import time
+import termios
 import tkinter as tk
 
 # -----------------------------------
@@ -42,6 +45,15 @@ def show_words_timed(words, duration_ms=1500):
     window.mainloop()
 
 # -----------------------------------
+# Clear leftover keystrokes in the terminal's input buffer
+# -----------------------------------
+def flush_input():
+    try:
+        termios.tcflush(sys.stdin, termios.TCIFLUSH)
+    except Exception:
+        pass  # ignored quietly if the environment doesn't support it
+
+# -----------------------------------
 # Serial-position scoring
 # -----------------------------------
 def serial_position_score(presented, recalled):
@@ -73,23 +85,29 @@ def run_single_trial(all_sentences):
     # Timestamp: recall start (immediately, no delay/interference — matches baseline)
     recall_start = time.time()
 
+    flush_input()  # clears any "ghost" Enter presses before asking for recall
     recalled_raw = input("Write all the words you remember: ")
     recalled = recalled_raw.split()
+
+    if recalled_raw.strip() == "":
+        print("Warning: No input received - check for a buffering issue if this wasn't intended.")
 
     sp_score = serial_position_score(presented, recalled)
 
     return sentence, presented, recalled, sp_score, presentation_start, presentation_end, recall_start
 
 # -----------------------------------
-# Full experiment: 4 participants × 10 trials
+# Full experiment: 1 participant x 10 trials
 # -----------------------------------
 def run_experiment():
     all_sentences = load_sentences("clean_sentences.txt")
 
+    os.makedirs("Result", exist_ok=True)  # creates the folder if it doesn't exist
+
     for p in range(1):
         print(f"\n--- Participant {p} ---")
         name = input("Enter participant name: ")
-        
+
         with open(f"Result/2C_{name}.csv", "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow([
@@ -107,7 +125,7 @@ def run_experiment():
             for trial in range(1, 11):
                 print(f"\nTrial {trial} for {name}")
                 (sentence, presented, recalled, sp_score,
-                t_start, t_end, t_recall) = run_single_trial(all_sentences)
+                 t_start, t_end, t_recall) = run_single_trial(all_sentences)
 
                 writer.writerow([
                     name,
@@ -121,7 +139,7 @@ def run_experiment():
                     t_recall
                 ])
 
-    print(f"\nChunking experiment complete. Data saved to Result/2C_{name}.csv")
+        print(f"\nChunking experiment complete. Data saved to Result/2C_{name}.csv")
 
 # Run experiment
 if __name__ == "__main__":

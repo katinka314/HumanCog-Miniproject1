@@ -54,7 +54,7 @@ def serial_recall_score(presented, recalled):
 # Run one serial-recall trial
 # -----------------------------------
 def run_single_trial(all_words):
-    presented = random.sample(all_words, 7)
+    presented = random.sample(all_words, 15)
 
     # Timestamp: presentation start
     presentation_start = time.time()
@@ -66,7 +66,7 @@ def run_single_trial(all_words):
     recall_start = time.time()
 
     # SERIAL recall: one answer per position
-    print("\nEnter the 7 words in the correct order:")
+    print("\nEnter the 15 words in the correct order:")
     recalled = []
     for i in range(7):
         ans = input(f"Word {i+1}: ").strip()

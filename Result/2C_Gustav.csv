@@ -1,0 +1,11 @@
+participant,trial,sentence,presented_words,recalled_words,serial_recall_score,presentation_start_time,presentation_end_time,recall_start_time
+Gustav,1,How far is it from here to where you work,How far is it from here to where you work,how far from is it to here to where you work,1 1 1 1 1 1 1 1 1 1,1789470589.892715,1789470605.4125571,1789470605.4125571
+Gustav,2,Why would you want to do a thing like that,Why would you want to do a thing like that,why would you want to do a thing like that,1 1 1 1 1 1 1 1 1 1,1789470624.504491,1789470639.564103,1789470639.564106
+Gustav,3,This is the same room we met in last time,This is the same room we met in last time,this is the same room we met in last time,1 1 1 1 1 1 1 1 1 1,1789470653.320719,1789470668.3766348,1789470668.3766358
+Gustav,4,Look at the book which he put on the desk,Look at the book which he put on the desk,look at the book which he put on the desk,1 1 1 1 1 1 1 1 1 1,1789470676.504166,1789470691.567104,1789470691.567106
+Gustav,5,What used to be true may not still be true,What used to be true may not still be true,what used to be true may not still be true,1 1 1 1 1 1 1 1 1 1,1789470697.841572,1789470712.907398,1789470712.907399
+Gustav,6,There is no one like her in the entire world,There is no one like her in the entire world,there is no one like her in the entire world,1 1 1 1 1 1 1 1 1 1,1789470726.0449028,1789470741.101502,1789470741.101502
+Gustav,7,How long has it been since you were in school,How long has it been since you were in school,how long has it been since you were in school,1 1 1 1 1 1 1 1 1 1,1789470747.149112,1789470762.218039,1789470762.2180429
+Gustav,8,Did you fall in love with me at first sight,Did you fall in love with me at first sight,did you fall in love with me at first sight,1 1 1 1 1 1 1 1 1 1,1789470776.756455,1789470791.8179772,1789470791.8179789
+Gustav,9,We must allow them to catch us in a sense,We must allow them to catch us in a sense,We must allow us to catch us in a sense,1 1 1 0 1 1 1 1 1 1,1789470801.068581,1789470816.136252,1789470816.1362529
+Gustav,10,Is that the house that you used to live in,Is that the house that you used to live in,is that the house you used to live in,1 1 1 1 0 1 1 1 1 1,1789470824.006905,1789470839.07108,1789470839.0710819

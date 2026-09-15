@@ -68,7 +68,7 @@ def run_single_trial(all_words):
     # SERIAL recall: one answer per position
     print("\nEnter the 15 words in the correct order:")
     recalled = []
-    for i in range(7):
+    for i in range(15):
         ans = input(f"Word {i+1}: ").strip()
         recalled.append(ans)
 

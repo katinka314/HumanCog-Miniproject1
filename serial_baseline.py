@@ -4,6 +4,7 @@ import time
 import tkinter as tk
 
 WORDS_PRESENTED = 10
+TRIALS = 10
 WORD_FILE = "clean_sentences10.txt"
 
 # -----------------------------------
@@ -66,7 +67,7 @@ def serial_recall_score(presented, recalled):
 # Run one serial-recall trial
 # -----------------------------------
 def run_single_trial(all_words):
-    presented = random.sample(all_words, 7)
+    presented = random.sample(all_words, WORDS_PRESENTED)
 
     # Timestamp: presentation start
     presentation_start = time.time()
@@ -80,7 +81,7 @@ def run_single_trial(all_words):
     # SERIAL recall: one answer per position
     print("\nEnter the 7 words in the correct order:")
     recalled = []
-    for i in range(7):
+    for i in range(WORDS_PRESENTED):
         ans = input(f"Word {i+1}: ").strip()
         if ans == "x":
             break
@@ -115,7 +116,7 @@ def run_experiment():
                 "recall_start_time"
             ])
 
-            for trial in range(1):
+            for trial in range(TRIALS):
                 print(f"\nTrial {trial} for {name}")
                 (presented, recalled, sp_score,
                  t_start, t_end, t_recall) = run_single_trial(all_words)

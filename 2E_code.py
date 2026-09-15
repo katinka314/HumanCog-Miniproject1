@@ -66,7 +66,7 @@ def serial_recall_score(presented, recalled):
 # Run one serial-recall trial
 # -----------------------------------
 def run_single_trial(all_words):
-    presented = random.sample(all_words, 7)
+    presented = random.sample(all_words, 10)
 
     # Timestamp: presentation start
     presentation_start = time.time()

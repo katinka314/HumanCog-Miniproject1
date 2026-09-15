@@ -3,6 +3,9 @@ import csv
 import time
 import tkinter as tk
 
+WORDS_PRESENTED = 10
+WORD_FILE = "clean_sentences10.txt"
+
 # -----------------------------------
 # Load and filter words
 # -----------------------------------
@@ -10,6 +13,15 @@ def load_four_letter_words(filename):
     with open(filename, "r", encoding="utf-8") as f:
         words = [w.strip() for w in f.readlines()]
     return [w for w in words if len(w) == 4]
+
+def get_words(filename):
+    words = []
+
+    with open(filename, "r", encoding="utf-8") as file:
+        for line in file:
+            words.extend(line.split())
+    words = [word.lower() for word in words]
+    return words
 
 # -----------------------------------
 # Show one word at a time with timer
@@ -54,7 +66,7 @@ def serial_recall_score(presented, recalled):
 # Run one serial-recall trial
 # -----------------------------------
 def run_single_trial(all_words):
-    presented = random.sample(all_words, 15)
+    presented = random.sample(all_words, WORDS_PRESENTED)
 
     # Timestamp: presentation start
     presentation_start = time.time()
@@ -66,10 +78,12 @@ def run_single_trial(all_words):
     recall_start = time.time()
 
     # SERIAL recall: one answer per position
-    print("\nEnter the 15 words in the correct order:")
+    print("\nEnter the words in the correct order. Write 'x' when you can't remember more:")
     recalled = []
-    for i in range(15):
+    for i in range(WORDS_PRESENTED):
         ans = input(f"Word {i+1}: ").strip()
+        if ans == "x":
+            break
         recalled.append(ans)
 
     sp_score = serial_recall_score(presented, recalled)
@@ -80,7 +94,8 @@ def run_single_trial(all_words):
 # Full experiment: 4 participants × 10 trials
 # -----------------------------------
 def run_experiment():
-    all_words = load_four_letter_words("words_3_4.txt")
+    #all_words = load_four_letter_words("words_3_4.txt")
+    all_words = get_words(WORD_FILE)
 
     # Loop over participants
     for p in range(1):
@@ -100,7 +115,7 @@ def run_experiment():
                 "recall_start_time"
             ])
 
-            for trial in range(1):
+            for trial in range(1, 11):
                 print(f"\nTrial {trial} for {name}")
                 (presented, recalled, sp_score,
                  t_start, t_end, t_recall) = run_single_trial(all_words)

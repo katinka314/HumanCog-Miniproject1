@@ -6,6 +6,7 @@ import time
 import termios
 import tkinter as tk
 
+SENTENCES = "clean_sentences10.txt"
 # -----------------------------------
 # Load sentences (chunking condition)
 # -----------------------------------
@@ -100,7 +101,7 @@ def run_single_trial(all_sentences):
 # Full experiment: 1 participant x 10 trials
 # -----------------------------------
 def run_experiment():
-    all_sentences = load_sentences("clean_sentences.txt")
+    all_sentences = load_sentences(SENTENCES)
 
     os.makedirs("Result", exist_ok=True)  # creates the folder if it doesn't exist
 

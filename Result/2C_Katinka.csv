@@ -1,0 +1,11 @@
+participant,trial,sentence,presented_words,recalled_words,serial_recall_score,presentation_start_time,presentation_end_time,recall_start_time
+Katinka,1,Come close to me if you want to see me,Come close to me if you want to see me,come close to me if you want to see me,1 1 1 1 1 1 1 1 1 1,1789474207.043524,1789474222.2717912,1789474222.2717912
+Katinka,2,If you want a red car buy a red car,If you want a red car buy a red car,if you want a red car buy a red car,1 1 1 1 1 1 1 1 1 1,1789474255.335789,1789474270.377318,1789474270.37732
+Katinka,3,In this firm women work on equal terms with men,In this firm women work on equal terms with men,In this firm women work on equal terms with men,1 1 1 1 1 1 1 1 1 1,1789474310.3555079,1789474325.403053,1789474325.403054
+Katinka,4,May you be happy in the life you have chosen,May you be happy in the life you have chosen,May you be happy in the life you have chosen,1 1 1 1 1 1 1 1 1 1,1789474343.938488,1789474358.985856,1789474358.985856
+Katinka,5,He is kind and what is still better very honest,He is kind and what is still better very honest,He is kind and what is still better than that,1 1 1 1 1 1 1 1 0 0,1789474378.230446,1789474393.269304,1789474393.269305
+Katinka,6,Which one is your book this one or that one,Which one is your book this one or that one,Which book is yours this one or that one,1 0 0 0 0 0 0 0 0 0,1789474420.1923258,1789474435.235571,1789474435.235573
+Katinka,7,You need to get out of the house more often,You need to get out of the house more often,You need to get out of the house more often,1 1 1 1 1 1 1 1 1 1,1789474438.2132668,1789474453.2531068,1789474453.253108
+Katinka,8,We often have to walk our dog even at night,We often have to walk our dog even at night,We often have to walk our dog also at night,1 1 1 1 1 1 1 0 1 1,1789474511.219771,1789474526.2562282,1789474526.2562292
+Katinka,9,The moment that he was alone he opened the letter,The moment that he was alone he opened the letter,As soon as he was alone he opened the letter,1 0 0 1 1 1 1 1 0 1,1789474554.606271,1789474569.648716,1789474569.6487172
+Katinka,10,He said he would do it when he had time,He said he would do it when he had time,He said he would do it when he has time,1 1 1 1 1 1 1 1 0 1,1789474583.161431,1789474598.2021492,1789474598.2021499
